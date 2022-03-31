@@ -58,7 +58,8 @@ class _ShoppingCartPageState extends State<ShoppingCartPage> {
                           onTap: () {
                             setState(() {
                               var order = {...shoppingCart};
-                              ordersData.addOrder(order);
+                              var price = shoppingData.price;
+                              ordersData.addOrder(order, price);
                               shoppingCart.clear();
                               shoppingData.price = 0.0;
                               counterData.reset();
