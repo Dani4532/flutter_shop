@@ -57,7 +57,7 @@ class GridTileTemplate extends StatelessWidget {
                 icon: Icon(Icons.shopping_cart_outlined),
                 onPressed: () {
                   ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                    content: Text('YAY! SnackBar'),
+                    content: Text('Do you want to remove the item?'),
                     action: SnackBarAction(
                       label: 'UNDO',
                       onPressed: () {

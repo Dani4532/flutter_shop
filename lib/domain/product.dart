@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
 class Product with ChangeNotifier {
-  final String name;
-  final String url;
-  final double price;
-  final String desc;
+  String name;
+  String url;
+  double price;
+  String desc;
   var fav = false;
 
   Product({

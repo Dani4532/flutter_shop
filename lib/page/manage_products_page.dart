@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_amazone/domain/products.dart';
+import 'package:flutter_amazone/page/add_product_page.dart';
 import 'package:flutter_amazone/page/edit_page.dart';
 import 'package:flutter_amazone/widget/drawer.dart';
 import 'package:provider/provider.dart';
@@ -20,7 +21,13 @@ class _ManagePageState extends State<ManagePage> {
       appBar: AppBar(
         title: Text('My products'),
         actions: [
-          IconButton(onPressed: () {}, icon: Icon(Icons.add)),
+          IconButton(
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => AddProductPage()),
+                );
+              },
+              icon: Icon(Icons.add)),
         ],
       ),
       drawer: CustomDrawer(),
@@ -38,9 +45,13 @@ class _ManagePageState extends State<ManagePage> {
                 child: Row(
                   children: [
                     IconButton(
-                      onPressed: () {Navigator.of(context).push(MaterialPageRoute(
-                        builder: (BuildContext context) => EditPage(index),
-                      ),);},
+                      onPressed: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (BuildContext context) => EditPage(index),
+                          ),
+                        );
+                      },
                       icon: Icon(Icons.edit),
                     ),
                     IconButton(

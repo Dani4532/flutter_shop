@@ -48,6 +48,14 @@ class Products with ChangeNotifier {
     notifyListeners();
   }
 
+  void changeProduct(index, Product product){
+    _productList[index].name = product.name;
+    _productList[index].desc = product.desc;
+    _productList[index].price = product.price;
+    _productList[index].url = product.url;
+    notifyListeners();
+  }
+
   void changeFav(Product product) {
     product.changeFav();
     notifyListeners();
