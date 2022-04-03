@@ -30,12 +30,21 @@ class EditPage extends StatelessWidget {
         child: Column(
           children: [
             TextField(
+              decoration: new InputDecoration(
+                  hintText: 'Name'
+              ),
               controller: nameController,
             ),
             TextField(
+              decoration: new InputDecoration(
+                  hintText: 'Description'
+              ),
               controller: descrController,
             ),
             TextField(
+              decoration: new InputDecoration(
+                  hintText: 'Price'
+              ),
               controller: preisController,
             ),
             Row(
@@ -54,6 +63,9 @@ class EditPage extends StatelessWidget {
                 ),
                 Expanded(
                   child: TextField(
+                    decoration: new InputDecoration(
+                        hintText: 'Image Url'
+                    ),
                     controller: imageController,
                   ),
                 ),
