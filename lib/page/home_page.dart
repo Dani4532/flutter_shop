@@ -9,7 +9,7 @@ import 'package:flutter_amazone/widget/product_view.dart';
 import 'package:provider/provider.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+  HomePage({Key? key}) : super(key: key);
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -22,7 +22,7 @@ class _HomePageState extends State<HomePage> {
     var countData = Provider.of<Counter>(context);
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Products'),
+        title: Text('Products'),
         actions: [
           PopupMenuButton<String>(
             tooltip: 'view menu',
@@ -38,7 +38,7 @@ class _HomePageState extends State<HomePage> {
           Badge(
             animationType: BadgeAnimationType.scale,
             position: BadgePosition.topEnd(end: 5,top: 5),
-            badgeContent: Text(countData.count.toString(), style: const TextStyle(color: Colors.white),),
+            badgeContent: Text(countData.count.toString(), style: TextStyle(color: Colors.white),),
 
             badgeColor: Colors.red,
             child: IconButton(
@@ -49,13 +49,13 @@ class _HomePageState extends State<HomePage> {
                   ),
                 );
               },
-              icon: const Icon(Icons.shopping_cart),
+              icon: Icon(Icons.shopping_cart),
             ),
           ),
         ],
       ),
-      drawer: const CustomDrawer(),
-      body: const ProductView(),
+      drawer: CustomDrawer(),
+      body: ProductView(),
     );
   }
 
