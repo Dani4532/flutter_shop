@@ -20,34 +20,32 @@ class _OrderPageState extends State<OrderPage> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Orders'),
+        title: const Text('Orders'),
       ),
-      drawer: CustomDrawer(),
+      drawer: const CustomDrawer(),
       body: Column(
         children: [
           Expanded(
             child: SingleChildScrollView(
-              child: Container(
-                child: ExpansionPanelList(
-                  expansionCallback: (index, expand) {
-                    setState(() {
-                      orderList[index].isExpanded = !expand;
-                    });
-                  },
-                  children: orderList.map<ExpansionPanel>((order) {
-                    return ExpansionPanel(
-                      headerBuilder: (context, isExpanded) {
-                        return ListTile(
-                          title: Text('Order ' + (count++).toString()),
-                          subtitle: Text(order.dateTime.day.toString() +'/'+ order.dateTime.month.toString() +'/'+ order.dateTime.year.toString()),
-                          trailing: Text(order.price.toString()+ ' €'),
-                        );
-                      },
-                      body: OrderListTile(order),
-                      isExpanded: order.isExpanded,
-                    );
-                  }).toList(),
-                ),
+              child: ExpansionPanelList(
+                expansionCallback: (index, expand) {
+                  setState(() {
+                    orderList[index].isExpanded = !expand;
+                  });
+                },
+                children: orderList.map<ExpansionPanel>((order) {
+                  return ExpansionPanel(
+                    headerBuilder: (context, isExpanded) {
+                      return ListTile(
+                        title: Text('Order ' + (count++).toString()),
+                        subtitle: Text(order.dateTime.day.toString() +'/'+ order.dateTime.month.toString() +'/'+ order.dateTime.year.toString()),
+                        trailing: Text(order.price.toString()+ ' €'),
+                      );
+                    },
+                    body: OrderListTile(order),
+                    isExpanded: order.isExpanded,
+                  );
+                }).toList(),
               ),
             ),
           ),

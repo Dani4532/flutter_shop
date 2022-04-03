@@ -19,18 +19,18 @@ class _ManagePageState extends State<ManagePage> {
     var productList = productData.getItems();
     return Scaffold(
       appBar: AppBar(
-        title: Text('My products'),
+        title: const Text('My products'),
         actions: [
           IconButton(
               onPressed: () {
                 Navigator.of(context).push(
-                  MaterialPageRoute(builder: (context) => AddProductPage()),
+                  MaterialPageRoute(builder: (context) => const AddProductPage()),
                 );
               },
-              icon: Icon(Icons.add)),
+              icon: const Icon(Icons.add)),
         ],
       ),
-      drawer: CustomDrawer(),
+      drawer: const CustomDrawer(),
       body: ListView.builder(
         itemBuilder: (context, index) => Padding(
           padding: const EdgeInsets.all(8.0),
@@ -52,7 +52,7 @@ class _ManagePageState extends State<ManagePage> {
                           ),
                         );
                       },
-                      icon: Icon(Icons.edit),
+                      icon: const Icon(Icons.edit),
                     ),
                     IconButton(
                       onPressed: () {
@@ -61,7 +61,7 @@ class _ManagePageState extends State<ManagePage> {
                               element.name == productList[index].name);
                         });
                       },
-                      icon: Icon(Icons.delete),
+                      icon: const Icon(Icons.delete),
                       color: Colors.red,
                     )
                   ],

@@ -7,13 +7,13 @@ class CustomDrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Drawer(
       child: ListView(
-        padding: EdgeInsets.all(20.0),
+        padding: const EdgeInsets.all(20.0),
         children: [
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: ListTile(
-              leading: Icon(Icons.shop),
-              title: Text('Shop'),
+              leading: const Icon(Icons.shop),
+              title: const Text('Shop'),
               onTap: () {
                 Navigator.pushNamed(context, '/shop');
               },
@@ -22,8 +22,8 @@ class CustomDrawer extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: ListTile(
-              leading: Icon(Icons.card_giftcard),
-              title: Text('Orders'),
+              leading: const Icon(Icons.card_giftcard),
+              title: const Text('Orders'),
               onTap: () {
                 Navigator.pushNamed(context, '/orders');
               },
@@ -32,8 +32,8 @@ class CustomDrawer extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: ListTile(
-              leading: Icon(Icons.edit),
-              title: Text('Manage products'),
+              leading: const Icon(Icons.edit),
+              title: const Text('Manage products'),
               onTap: () {
                 Navigator.pushNamed(context, '/manage');
               },

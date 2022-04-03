@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_amazone/domain/product.dart';
-import 'package:flutter_amazone/domain/shopping_cart_class.dart';
+
 
 class ShoppingCart with ChangeNotifier {
   Map<Product,int> _productList = {};

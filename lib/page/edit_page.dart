@@ -23,7 +23,7 @@ class EditPage extends StatelessWidget {
     imageController.text = productlist[index].url;
     return Scaffold(
       appBar: AppBar(
-        title: Text('Edit Page'),
+        title: const Text('Edit Page'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
@@ -69,7 +69,7 @@ class EditPage extends StatelessWidget {
                   productdata.changeProduct(index, product);
                   Navigator.of(context).pop();
                 },
-                child: Text('Change Entry')),
+                child: const Text('Change Entry')),
           ],
         ),
       ),

@@ -1,5 +1,4 @@
 import 'package:badges/badges.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_amazone/domain/counter.dart';
 import 'package:flutter_amazone/domain/menu_items.dart';
@@ -10,7 +9,7 @@ import 'package:flutter_amazone/widget/product_view.dart';
 import 'package:provider/provider.dart';
 
 class HomePage extends StatefulWidget {
-  HomePage({Key? key}) : super(key: key);
+  const HomePage({Key? key}) : super(key: key);
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -23,7 +22,7 @@ class _HomePageState extends State<HomePage> {
     var countData = Provider.of<Counter>(context);
     return Scaffold(
       appBar: AppBar(
-        title: Text('Products'),
+        title: const Text('Products'),
         actions: [
           PopupMenuButton<String>(
             tooltip: 'view menu',
@@ -39,7 +38,7 @@ class _HomePageState extends State<HomePage> {
           Badge(
             animationType: BadgeAnimationType.scale,
             position: BadgePosition.topEnd(end: 5,top: 5),
-            badgeContent: Text(countData.count.toString(), style: TextStyle(color: Colors.white),),
+            badgeContent: Text(countData.count.toString(), style: const TextStyle(color: Colors.white),),
 
             badgeColor: Colors.red,
             child: IconButton(
@@ -50,13 +49,13 @@ class _HomePageState extends State<HomePage> {
                   ),
                 );
               },
-              icon: Icon(Icons.shopping_cart),
+              icon: const Icon(Icons.shopping_cart),
             ),
           ),
         ],
       ),
-      drawer: CustomDrawer(),
-      body: ProductView(),
+      drawer: const CustomDrawer(),
+      body: const ProductView(),
     );
   }
 

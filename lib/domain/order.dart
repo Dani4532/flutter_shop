@@ -1,5 +1,4 @@
 import 'package:flutter_amazone/domain/product.dart';
-import 'package:flutter_amazone/domain/products.dart';
 
 class Order {
   List<Product> productList = [];

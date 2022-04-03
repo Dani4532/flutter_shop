@@ -14,11 +14,11 @@ class AddProductPage extends StatelessWidget {
     var descrController = TextEditingController();
     var imageController = TextEditingController();
     var productdata = Provider.of<Products>(context);
-    var productlist = productdata.getItems();
+
 
     return Scaffold(
         appBar: AppBar(
-          title: Text('Edit Page'),
+          title: const Text('Edit Page'),
         ),
         body: Padding(
           padding: const EdgeInsets.all(8.0),
@@ -60,7 +60,7 @@ class AddProductPage extends StatelessWidget {
                     productdata.addProduct(product);
                     Navigator.of(context).pop();
                   },
-                  child: Text('Add Entry')),
+                  child: const Text('Add Entry')),
             ],
           ),
         ));

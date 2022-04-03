@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_amazone/domain/counter.dart';
-import 'package:flutter_amazone/domain/product.dart';
 import 'package:flutter_amazone/domain/products.dart';
 import 'package:flutter_amazone/domain/shopping_cart.dart';
 import 'package:flutter_amazone/page/detail_page.dart';
@@ -54,10 +53,10 @@ class GridTileTemplate extends StatelessWidget {
                 textAlign: TextAlign.center,
               ),
               trailing: IconButton(
-                icon: Icon(Icons.shopping_cart_outlined),
+                icon: const Icon(Icons.shopping_cart_outlined),
                 onPressed: () {
                   ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                    content: Text('Do you want to remove the item?'),
+                    content: const Text('Do you want to remove the item?'),
                     action: SnackBarAction(
                       label: 'UNDO',
                       onPressed: () {
