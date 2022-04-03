@@ -57,12 +57,17 @@ class _ShoppingCartPageState extends State<ShoppingCartPage> {
                         child: GestureDetector(
                           onTap: () {
                             setState(() {
-                              var order = {...shoppingCart};
-                              var price = shoppingData.price;
-                              ordersData.addOrder(order, price);
-                              shoppingCart.clear();
-                              shoppingData.price = 0.0;
-                              counterData.reset();
+                              if(shoppingCart.isEmpty){
+
+                              }else {
+                                var order = shoppingCart.keys.toList();
+                                var anzahl = shoppingCart.values.toList();
+                                var price = shoppingData.price;
+                                ordersData.addOrder(order, anzahl, price);
+                                shoppingCart.clear();
+                                shoppingData.price = 0.0;
+                                counterData.reset();
+                              }
                             });
                           },
                           child: Text(

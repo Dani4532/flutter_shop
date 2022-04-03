@@ -11,8 +11,8 @@ class Orders with ChangeNotifier{
     return orderList;
   }
 
-  void addOrder(Map<Product,int> order, price){
-    orderList.add(Order(orderlist: order, price: price));
+  void addOrder(List<Product> order, List<int> anzahl, price){
+    orderList.add(Order(productList: order, anzahlList: anzahl,  price: price));
     notifyListeners();
   }
 
